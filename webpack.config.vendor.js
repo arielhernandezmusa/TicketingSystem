@@ -15,12 +15,10 @@ const treeShakableModules = [
     'zone.js',
 ];
 const nonTreeShakableModules = [
-    'bootstrap',
-    'bootstrap/dist/css/bootstrap.css',
+    'mdbootstrap/css/style.css',
     'es6-promise',
     'es6-shim',
-    'event-source-polyfill',
-    'jquery',
+    'event-source-polyfill'
 ];
 const allModules = treeShakableModules.concat(nonTreeShakableModules);
 

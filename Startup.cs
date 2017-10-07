@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TicketingSystem.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace TicketingSystem
 {
@@ -26,6 +27,11 @@ namespace TicketingSystem
         {
             services.AddDbContext<TicketingSystemContext>(options =>
                 options.UseInMemoryDatabase("TicketingSystem"));
+
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<TicketingSystemContext>()
+                .AddDefaultTokenProviders();
+
             services.AddMvc();
         }
 
@@ -46,6 +52,8 @@ namespace TicketingSystem
             }
 
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

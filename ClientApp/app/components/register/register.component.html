@@ -1,0 +1,63 @@
+<br>
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <h1>Ticketing System</h1>
+        <br>
+        <section class="form-simple">
+                <form #f="ngForm" novalidate>
+                    <!--Form with header-->
+                    <div class="card">
+                
+                        <!--Header-->
+                        <div class="header pt-3 grey lighten-2">
+                
+                            <div class="row d-flex justify-content-start">
+                                <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Sign Up</h3>
+                            </div>
+                
+                        </div>
+                        <!--Header-->
+                
+                        <div class="card-body mx-4 mt-4">
+                
+                            <!--Body-->
+                            <div class="md-form">
+                                <input type="text" id="Form-name4" class="form-control">
+                                <label for="Form-email4">Your name</label>
+                            </div>
+
+                            <div class="md-form">
+                                <input type="email" name="Email" [ngModel]="user.Email" id="Form-email4" class="form-control"
+                                required #Email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+                                <small [hidden]="Email.valid || (Email.pristine && !f.submitted)" class="text-danger">
+                                        Email is required and format should be <i>john@doe.com</i>.
+                                      </small>
+                                <label for="Form-email4">Your email</label>
+                            </div>
+                
+                            <div class="md-form pb-3">
+                                <input type="password" id="Form-pass4" class="form-control">
+                                <label for="Form-pass4">Your password</label>
+                            </div>
+
+                            <div class="md-form pb-3">
+                                    <input type="password" id="Form-pass4" class="form-control">
+                                    <label for="Form-pass4">Re-Enter password</label>
+                            </div>
+                
+                            <div class="text-center mb-4">
+                                <button type="button" class="btn btn-default btn-block z-depth-2">Sign Up</button>
+                            </div>
+                            <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="#" class="dark-grey-text font-bold ml-1"> Sign in</a></p>
+                
+                        </div>
+                
+                    </div>
+                    <!--/Form with header-->
+            </form>
+            
+                </section>
+    </div>
+    <div class="col-lg-4"></div>
+</div>

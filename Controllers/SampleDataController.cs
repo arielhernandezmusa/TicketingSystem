@@ -27,11 +27,6 @@ namespace TicketingSystem.Controllers
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
 
-            
-            Ticket t = new Ticket {Title="asdasdasd", Body="adasdagjshdg ajsd gjasd", Created = new DateTime()};
-            this.context.Tickes.Add(t);
-            this.context.SaveChanges();
-
             List<Ticket> list =  this.context.Tickes.ToList<Ticket>();
 
 
