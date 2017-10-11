@@ -46,9 +46,9 @@
       }
     },
     "@angular/core": {
-      "version": "4.3.6",
-      "resolved": "https://registry.npmjs.org/@angular/core/-/core-4.3.6.tgz",
-      "integrity": "sha1-u6xj1o0Pe8s4nRKzQghlK+MofpY=",
+      "version": "4.2.5",
+      "resolved": "https://registry.npmjs.org/@angular/core/-/core-4.2.5.tgz",
+      "integrity": "sha1-YcG1iFwmIzLXN/vg9dcRUXWahGQ=",
       "requires": {
         "tslib": "1.7.1"
       }
@@ -238,6 +238,11 @@
       "version": "1.0.1",
       "resolved": "https://registry.npmjs.org/amdefine/-/amdefine-1.0.1.tgz",
       "integrity": "sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU="
+    },
+    "angular-2-local-storage": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/angular-2-local-storage/-/angular-2-local-storage-1.0.1.tgz",
+      "integrity": "sha1-O4RskLL//JEk97rMNH8i0EOh46Q="
     },
     "angular2-template-loader": {
       "version": "0.6.2",
@@ -2970,11 +2975,6 @@
       "resolved": "https://registry.npmjs.org/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz",
       "integrity": "sha1-3oGf282E3M2PrlnGrreWFbnSZqw="
     },
-    "mdbootstrap": {
-      "version": "4.4.1",
-      "resolved": "https://registry.npmjs.org/mdbootstrap/-/mdbootstrap-4.4.1.tgz",
-      "integrity": "sha1-J/yQuOOmQ2w99k88d8KwBmi1jBo="
-    },
     "media-typer": {
       "version": "0.3.0",
       "resolved": "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz",
@@ -3116,6 +3116,11 @@
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz",
       "integrity": "sha1-KzJxhOiZIQEXeyhWP7XnECrNDKk=",
       "dev": true
+    },
+    "ngx-bootstrap": {
+      "version": "1.9.3",
+      "resolved": "https://registry.npmjs.org/ngx-bootstrap/-/ngx-bootstrap-1.9.3.tgz",
+      "integrity": "sha512-beoKQGJEFwdg0ctIpGb+vx4PTPkyqHrA5tBAEbnUn7ZlTjjfA6533QYGv3qVoKPDNkkHmLA3lRjWKxEMYepCdg=="
     },
     "no-case": {
       "version": "2.3.1",
@@ -3541,6 +3546,11 @@
       "requires": {
         "pinkie": "2.0.4"
       }
+    },
+    "popper.js": {
+      "version": "1.12.5",
+      "resolved": "https://registry.npmjs.org/popper.js/-/popper.js-1.12.5.tgz",
+      "integrity": "sha512-6R2eXIy1xYukMNutoD+y/Gj0IpjEQhivyZonm5Vz0Fp8jdc7kvheKCvpM/t+PxqKb7VbLVnvPVEdTyslEb7f6w=="
     },
     "posix-character-classes": {
       "version": "0.1.1",

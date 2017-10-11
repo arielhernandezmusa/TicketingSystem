@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../utils/user.interface';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'register',
@@ -10,19 +11,26 @@ import { User } from '../../utils/user.interface';
 export class RegisterComponent implements OnInit {
 
     public user: User;
+    public registered: boolean;
 
-    constructor() { }
+    constructor(public userService: UserService) { }
 
     ngOnInit() { 
+
+        this.registered = false;
+
         this.user = {
-            Name: 'yyytu',
-            Email: '',
-            Password: '',
-            ConfirmPassword: ''
+            name: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
         }
     }
 
     public Register() {
-        console.log(this.user);
+        this.userService.Register(this.user).then(result => {
+            this.registered = result as boolean;
+            console.log(result);
+        });
     }
 }

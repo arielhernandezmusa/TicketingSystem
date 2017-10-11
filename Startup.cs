@@ -25,8 +25,12 @@ namespace TicketingSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=EFGetStarted.AspNetCore.NewDb;Trusted_Connection=True;";
             services.AddDbContext<TicketingSystemContext>(options =>
-                options.UseInMemoryDatabase("TicketingSystem"));
+                options.UseSqlServer(connection));
+
+            // services.AddDbContext<TicketingSystemContext>(option => 
+            //     option.UseInMemoryDatabase("TicketingSystem"));
 
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<TicketingSystemContext>()

@@ -1,1 +1,50 @@
-Login
+<div class="container">
+    
+    <div class="col-md-10 col-md-offset-1 main" >
+    <div class="col-md-6 left-side" >
+    <h3>Ticketing System</h3>
+    <!-- <p>Connect to SiDDiQUiE.NET network.</p> -->
+    <br>
+
+
+    </div><!--col-sm-6-->
+    
+    <div class="col-md-6 right-side">
+    <h3>Login</h3>
+    
+<!--Form with header-->
+<form class="form" (submit)="SignIn()">
+
+    <div class="alert alert-danger" *ngIf="errorMessage" >
+        {{errorMessage}}
+    </div>
+
+    <div class="form-group text-left">
+        <label for="form2">Your e-mail</label>
+        <input type="email" id="form2" class="form-control input-lg" [(ngModel)]="user.email" name="email">
+        
+    </div>
+
+    <div class="form-group text-left">
+        <label for="form4">Your password</label>
+        <input type="password" id="form4" class="form-control input-lg" [(ngModel)]="user.password" name="password">
+       
+    </div>
+
+    <div class="text-xs-center row">
+        <button type="submit" class="btn btn-deep-purple">Sign In</button>
+    </div>
+    <br>
+    <div class="row text-right">
+        Don't have an account yet? <a [routerLink]="['/register']" >Register</a>
+    </div>
+
+</form>
+<!--/Form with header-->
+
+    </div><!--col-sm-6-->
+    
+    
+    </div><!--col-sm-8-->
+    
+    </div><!--container-->

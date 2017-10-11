@@ -36,6 +36,7 @@ namespace TicketingSystem
                 try 
                 {
                     var context = services.GetRequiredService<TicketingSystemContext>();
+                    DbInitializer.CreateUserRole(context);
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)

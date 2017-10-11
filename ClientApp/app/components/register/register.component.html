@@ -1,63 +1,58 @@
-<br>
-<div class="row">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4">
-        <h1>Ticketing System</h1>
-        <br>
-        <section class="form-simple">
-                <form #f="ngForm" novalidate>
-                    <!--Form with header-->
-                    <div class="card">
-                
-                        <!--Header-->
-                        <div class="header pt-3 grey lighten-2">
-                
-                            <div class="row d-flex justify-content-start">
-                                <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Sign Up</h3>
-                            </div>
-                
-                        </div>
-                        <!--Header-->
-                
-                        <div class="card-body mx-4 mt-4">
-                
-                            <!--Body-->
-                            <div class="md-form">
-                                <input type="text" id="Form-name4" class="form-control">
-                                <label for="Form-email4">Your name</label>
-                            </div>
+<div class="container">
+    
+    <div class="col-md-10 col-md-offset-1 main" >
+    <div class="col-md-6 left-side" >
+    <h3>Ticketing System</h3>
+    <!-- <p>Connect to SiDDiQUiE.NET network.</p> -->
+    <br>
 
-                            <div class="md-form">
-                                <input type="email" name="Email" [ngModel]="user.Email" id="Form-email4" class="form-control"
-                                required #Email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
-                                <small [hidden]="Email.valid || (Email.pristine && !f.submitted)" class="text-danger">
-                                        Email is required and format should be <i>john@doe.com</i>.
-                                      </small>
-                                <label for="Form-email4">Your email</label>
-                            </div>
-                
-                            <div class="md-form pb-3">
-                                <input type="password" id="Form-pass4" class="form-control">
-                                <label for="Form-pass4">Your password</label>
-                            </div>
 
-                            <div class="md-form pb-3">
-                                    <input type="password" id="Form-pass4" class="form-control">
-                                    <label for="Form-pass4">Re-Enter password</label>
-                            </div>
-                
-                            <div class="text-center mb-4">
-                                <button type="button" class="btn btn-default btn-block z-depth-2">Sign Up</button>
-                            </div>
-                            <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="#" class="dark-grey-text font-bold ml-1"> Sign in</a></p>
-                
-                        </div>
-                
-                    </div>
-                    <!--/Form with header-->
-            </form>
-            
-                </section>
+    </div><!--col-sm-6-->
+    
+    <div class="col-md-6 right-side">
+    <h3>Sign Up</h3>
+    
+<!--Form with header-->
+<form class="form" (submit)="Register()">
+
+    <div class="form-group text-left">
+        <label for="form2">Your Name</label>
+        <input type="text" id="form2" class="form-control input-lg" [(ngModel)]="user.name" name="name">
+        
     </div>
-    <div class="col-lg-4"></div>
-</div>
+
+    <div class="form-group text-left">
+        <label for="form2">Your e-mail</label>
+        <input type="email" id="form2" class="form-control input-lg" [(ngModel)]="user.email" name="email">
+        
+    </div>
+
+    <div class="form-group text-left">
+        <label for="form4">Your password</label>
+        <input type="password" id="form4" class="form-control input-lg" [(ngModel)]="user.password" name="password">
+       
+    </div>
+
+    <div class="form-group text-left">
+        <label for="form4">Repeat password</label>
+        <input type="password" id="form4" class="form-control input-lg" [(ngModel)]="user.confitmPassword" name="confitmPassword">
+       
+    </div>
+
+    <div class="text-xs-center row">
+        <button type="submit" class="btn btn-deep-purple">Sign Up</button>
+    </div>
+    <br>
+    <div class="row text-right">
+        Don't have an account yet? <a [routerLink]="['/login']" >Login</a>
+    </div>
+
+</form>
+<!--/Form with header-->
+
+    </div><!--col-sm-6-->
+    
+    
+    </div><!--col-sm-8-->
+    
+    </div><!--container-->

@@ -25,23 +25,36 @@ namespace TicketingSystem.Controllers
 
         [HttpPost("[action]")]
         [AllowAnonymous]
-        public async Task<IActionResult> Register([FromBody]User user) {
+        public async Task<IActionResult> Register([FromBody]UserViewModel userViewModel) {
 
-            var result = await this.userManager.CreateAsync(user, user.PasswordHash);
+            var user = new User {Name = userViewModel.Name, Email = userViewModel.Email, UserName = userViewModel.Email };
 
-            var users = this.db.Users.ToList<User>();
+            var result = await this.userManager.CreateAsync(user, userViewModel.Password);
 
-            return CreatedAtAction("UserRegistered", new {id = 1}, user);
+            return CreatedAtAction("UserRegistered", new { UserRegistered = true});
         }
 
         [HttpPost("[action]")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login([FromBody]UserViewModel userViewModel)
+        public IActionResult Login([FromBody]UserViewModel userViewModel)
         {
-            var result = await this.signInManager.PasswordSignInAsync(userViewModel.Email, userViewModel.Password, false, false);
+            var u = this.db.Users.Where(user => user.UserName == userViewModel.Email).FirstOrDefault();
 
-            return CreatedAtAction("LoggedIn", new {id=1}, userViewModel);
+            if (u == null) {
+                return CreatedAtAction("SignIn", new {userSignedIn = false});
+            }
+
+            var password = new PasswordHasher<User>();
+            PasswordVerificationResult result = password.VerifyHashedPassword(u, u.PasswordHash, userViewModel.Password);
+            if (result.ToString().Equals("Failed")) 
+            {
+                return CreatedAtAction("SignIn", new {userSignedIn = false}); 
+            }
+
+
+            return CreatedAtAction("SignIn", new {userSignedIn = true});
         }
+
 
     }
 }
