@@ -19,7 +19,7 @@ export class TicketComponent implements OnInit {
         });
     }
 
-    public openModal(template: TemplateRef<any>) {
+    public openModal() {
         //$('#addForm').modal('show')
     }
 }
