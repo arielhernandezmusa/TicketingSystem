@@ -18,6 +18,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TicketService } from './services/ticket.service';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { HomeDashboardComponent } from './components/home/home-dashboard.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { HomeDashboardComponent } from './components/home/home-dashboard.compone
         }),
         HttpModule,
         FormsModule,
+        NgbModule.forRoot(),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent, children : [

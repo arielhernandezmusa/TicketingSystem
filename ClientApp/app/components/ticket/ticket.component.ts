@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { TicketService } from '../../services/ticket.service';
+import * as $ from 'jquery';
 
 @Component({
     selector: 'ticket',
@@ -19,6 +20,6 @@ export class TicketComponent implements OnInit {
     }
 
     public openModal(template: TemplateRef<any>) {
-        // this.modalRef = this.modalService.show(template);
+        //$('#addForm').modal('show')
     }
 }

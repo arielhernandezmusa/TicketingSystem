@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'home',
@@ -7,6 +8,10 @@ import * as $ from 'jquery';
     styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+    public constructor(public userService: UserService){
+
+    }
 
     ngOnInit() {
         $('#menu ul').hide();
