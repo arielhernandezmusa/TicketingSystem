@@ -18,8 +18,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TicketService } from './services/ticket.service';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { HomeDashboardComponent } from './components/home/home-dashboard.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { ModalModule } from 'ngx-bootstrap';
 
 @NgModule({
     declarations: [
@@ -42,7 +41,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
         }),
         HttpModule,
         FormsModule,
-        NgbModule.forRoot(),
+        ModalModule.forRoot(),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent, children : [
