@@ -26,8 +26,11 @@ namespace TicketingSystem
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = @"Server=(localdb)\mssqllocaldb;Database=TicketingSystemDB;Trusted_Connection=True;";
+
+            var connString = @"Data Source=sql5030.smarterasp.net;Initial Catalog=DB_A2BF40_ticketingsystem;User ID=DB_A2BF40_ticketingsystem_admin;Password=Summer.0099;";
+
             services.AddDbContext<TicketingSystemContext>(options =>
-                options.UseSqlServer(connection));
+                options.UseSqlServer(connString));
 
             // services.AddDbContext<TicketingSystemContext>(option => 
             //     option.UseInMemoryDatabase("TicketingSystem"));
