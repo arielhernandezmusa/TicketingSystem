@@ -17,7 +17,6 @@ import { LocalStorageModule } from 'angular-2-local-storage';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TicketService } from './services/ticket.service';
 import { TicketComponent } from './components/ticket/ticket.component';
-import { ModalModule } from 'ng2-bootstrap';
 import { HomeDashboardComponent } from './components/home/home-dashboard.component';
 
 
@@ -40,7 +39,6 @@ import { HomeDashboardComponent } from './components/home/home-dashboard.compone
             prefix: 'TeckitingSystem',
             storageType: 'localStorage'
         }),
-        ModalModule.forRoot(),
         HttpModule,
         FormsModule,
         RouterModule.forRoot([
@@ -52,9 +50,6 @@ import { HomeDashboardComponent } from './components/home/home-dashboard.compone
             { path: 'register', component: RegisterComponent},
             { path: 'login', component: LoginComponent},
          ])
-    ],
-    exports: [
-        ModalModule
     ],
     providers: [UserService, AuthGuard, TicketService]
 })

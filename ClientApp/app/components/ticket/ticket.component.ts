@@ -1,7 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { TicketService } from '../../services/ticket.service';
-import { BsModalService } from 'ngx-bootstrap/modal';
-import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
 @Component({
     selector: 'ticket',
@@ -11,9 +9,8 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 export class TicketComponent implements OnInit {
 
     public tickets = [];
-    public modalRef: BsModalRef;
 
-    constructor(private ticketService: TicketService, private modalService: BsModalService) { }
+    constructor(private ticketService: TicketService) { }
 
     ngOnInit() { 
         this.ticketService.List().then(result => {
@@ -22,6 +19,6 @@ export class TicketComponent implements OnInit {
     }
 
     public openModal(template: TemplateRef<any>) {
-        this.modalRef = this.modalService.show(template);
+        // this.modalRef = this.modalService.show(template);
     }
 }
