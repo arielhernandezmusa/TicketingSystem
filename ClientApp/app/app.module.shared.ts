@@ -17,7 +17,7 @@ import { LocalStorageModule } from 'angular-2-local-storage';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TicketService } from './services/ticket.service';
 import { TicketComponent } from './components/ticket/ticket.component';
-//import { ModalModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap';
 import { HomeDashboardComponent } from './components/home/home-dashboard.component';
 
 
@@ -40,7 +40,7 @@ import { HomeDashboardComponent } from './components/home/home-dashboard.compone
             prefix: 'TeckitingSystem',
             storageType: 'localStorage'
         }),
-        //ModalModule.forRoot(),
+        ModalModule.forRoot(),
         HttpModule,
         FormsModule,
         RouterModule.forRoot([
