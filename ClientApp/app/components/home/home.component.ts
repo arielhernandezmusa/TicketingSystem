@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        
+
         $('#menu ul').hide();
         $('#menu ul').children('.current').parent().show();
        // $('#menu ul:first').show();
@@ -43,5 +46,9 @@ export class HomeComponent implements OnInit {
         $("#wrapper").toggleClass("toggled-2");
         $('#menu ul').hide();
    }         
+
+   public LogOut() {
+       this.userService.LogOut();
+   }
 
 }

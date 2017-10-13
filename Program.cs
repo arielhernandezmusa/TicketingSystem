@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,9 +38,10 @@ namespace TicketingSystem
                 try 
                 {
                     var context = services.GetRequiredService<TicketingSystemContext>();
-                    context.Database.Migrate();
-                    DbInitializer.CreateUserRole(context);
-                    DbInitializer.Initialize(context);
+                    //var roleManager = services.GetRequiredService<RoleManager<Role>>();
+                    // context.Database.Migrate();
+                    // DbInitializer.CreateUserRole(context);
+                    DbInitializer.InitializeAsync(context);
                 }
                 catch (Exception ex)
                 {

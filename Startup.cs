@@ -27,7 +27,7 @@ namespace TicketingSystem
         {
             var connection = @"Server=(localdb)\mssqllocaldb;Database=TicketingSystemDB;Trusted_Connection=True;";
 
-            var connString = @"Data Source=sql5030.smarterasp.net;Initial Catalog=DB_A2BF40_ticketingsystem;User ID=DB_A2BF40_ticketingsystem_admin;Password=Summer.0099;";
+            var connString = @"Data Source=sql5030.smarterasp.net;Initial Catalog=DB_A2BF40_ticketingsystem;User ID=DB_A2BF40_ticketingsystem_admin;Password=Summer.0099;MultipleActiveResultSets=True;";
 
             services.AddDbContext<TicketingSystemContext>(options =>
                 options.UseSqlServer(connString));
@@ -35,7 +35,7 @@ namespace TicketingSystem
             // services.AddDbContext<TicketingSystemContext>(option => 
             //     option.UseInMemoryDatabase("TicketingSystem"));
 
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<User, Role>()
                 .AddEntityFrameworkStores<TicketingSystemContext>()
                 .AddDefaultTokenProviders();
 

@@ -15,7 +15,7 @@
                 <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
      
                     <li>
-                            <a [routerLink]="['/home']" routerLinkActive="active"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cloud-download fa-stack-1x "></i></span>Dashboard</a>
+                            <a [routerLink]="['/home']" routerLinkActive="active"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Dashboard</a>
                     </li>
                     <!-- <li>
                         <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span> Shortcut</a>
@@ -26,19 +26,14 @@
                         </ul>
                     </li> -->
                     <li >
-                        <a [routerLink]="['/home/tickets']" routerLinkActive="active"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cloud-download fa-stack-1x "></i></span>Manage Tickets</a>
+                        <a [routerLink]="['/home/tickets']" routerLinkActive="active"><span class="fa-stack fa-lg pull-left"><i class="fa fa-ticket fa-stack-1x "></i></span>Manage Tickets</a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a href="#">{{userService.CurrentUser.name}}</a>
                     </li>
                     <li>
-                        <a href="#"> <span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Events</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-youtube-play fa-stack-1x "></i></span>About</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Services</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span>Contact</a>
+                        <a (click)="LogOut()"><span class="fa-stack fa-lg pull-left"><i class="fa fa-sign-out fa-stack-1x"></i> </span>Close Session</a>
                     </li>
                 </ul>
             </div><!-- /#sidebar-wrapper -->

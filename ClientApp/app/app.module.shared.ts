@@ -19,6 +19,7 @@ import { TicketService } from './services/ticket.service';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { HomeDashboardComponent } from './components/home/home-dashboard.component';
 import { ModalModule } from 'ngx-bootstrap';
+import { TabsModule } from 'ngx-bootstrap';
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import { ModalModule } from 'ngx-bootstrap';
         HttpModule,
         FormsModule,
         ModalModule.forRoot(),
+        TabsModule.forRoot(),
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent, children : [

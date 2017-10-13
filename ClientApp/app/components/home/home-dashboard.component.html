@@ -1,0 +1,38 @@
+<h1>My Tickets</h1>
+<tabset type="pills">
+    
+    <tab heading="Opened">
+        <div *ngIf="ticketsOpened.length == 0">
+            No opened tickets assigned to you
+        </div> 
+        <table *ngIf="ticketsOpened.length > 0" class="table table-hover">
+            <thead>
+                <th>
+                    Title
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ticket of ticketsOpened" >
+                    <td>{{ticket.title}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </tab>
+    <tab heading="Closed">
+        <div *ngIf="ticketsClosed.length == 0">
+            No closed tickets assigned to you
+        </div> 
+        <table *ngIf="ticketsClosed.length > 0" class="table table-hover">
+            <thead>
+                <th>
+                    Title
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ticket of ticketsClosed" >
+                    <td>{{ticket.title}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </tab>
+</tabset>

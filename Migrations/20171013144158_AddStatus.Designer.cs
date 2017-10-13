@@ -11,9 +11,10 @@ using TicketingSystem.Models;
 namespace TicketingSystem.Migrations
 {
     [DbContext(typeof(TicketingSystemContext))]
-    partial class TicketingSystemContextModelSnapshot : ModelSnapshot
+    [Migration("20171013144158_AddStatus")]
+    partial class AddStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

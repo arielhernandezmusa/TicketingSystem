@@ -52,8 +52,17 @@ namespace TicketingSystem.Controllers
             }
 
 
-            return CreatedAtAction("SignIn", new {userSignedIn = true});
+            return CreatedAtAction("SignIn", new {userSignedIn = true, user = u});
         }
+
+        [HttpGet("[action]")]
+        [AllowAnonymous]
+        public IEnumerable<User>  List()
+         {
+             var users = this.db.Users.ToList<User>();
+            
+             return users.ToArray();
+         }
 
 
     }

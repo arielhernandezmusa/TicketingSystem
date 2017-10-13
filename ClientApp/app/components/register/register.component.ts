@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
         this.registered = false;
 
         this.user = {
+            id: '',
             name: '',
             email: '',
             password: '',
